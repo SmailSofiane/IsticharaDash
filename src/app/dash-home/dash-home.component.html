@@ -1,0 +1,28 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h1> cityzen claims</h1>
+    </div>
+    <div class="panel-body">
+       <table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Num</th>
+            <th>nin</th>
+            <th>titre</th>
+            <th>project</th>
+            <th>adress</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let avi of avis">
+            <td>{{avi.num}}</td>
+            <td>{{avi.nin}}</td>
+            <td>{{avi.titre}}</td>
+             
+
+        </tr>
+    </tbody>
+       </table>     
+
+    </div>
+</div>

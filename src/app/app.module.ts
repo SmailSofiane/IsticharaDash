@@ -8,12 +8,14 @@ import { HomeComponent } from './home/home.component';
  import {fakeBackendProvider} from './_helpers';
  import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { DashHomeComponent } from './dash-home/dash-home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    DashHomeComponent
     
   ],
   imports: [
@@ -26,7 +28,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
   providers: [
     {provide:HTTP_INTERCEPTORS,useClass:JwtInterceptor,multi:true},
     {provide:HTTP_INTERCEPTORS,useClass:ErrorInterceptor,multi:true}
-  ,fakeBackendProvider],
+  //,fakeBackendProvider
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

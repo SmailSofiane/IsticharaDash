@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { User } from './_models';
 import { Router } from '@angular/router';
-import { AuthenticationService } from './_services';
+import { HttpAuthService } from './_services';
 
 @Component({
   selector: 'app',
@@ -12,7 +12,7 @@ export class AppComponent {
   currentUser:User;
   constructor(
     private router:Router,
-    private authenticationService:AuthenticationService
+    private authenticationService:HttpAuthService
   )
   {
     this.authenticationService.currentUser.subscribe(
@@ -20,7 +20,7 @@ export class AppComponent {
     );
   }
   logout(){
-    this.authenticationService.logout();
+    this.authenticationService.logOut();
     this.router.navigate(['/login']);
   }
 
