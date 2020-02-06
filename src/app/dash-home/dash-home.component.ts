@@ -3,6 +3,8 @@ import { Observable } from 'rxjs';
 import { AvisCitoyen } from '@app/_models/AvisCitoyen';
 import { DashService } from '@app/_services/_dashService/dash.service';
 import { map } from 'rxjs/operators';
+import { Wilaya } from '@app/_models/wilaya';
+import { log } from 'util';
 
 @Component({
   selector: 'app-dash-home',
@@ -12,12 +14,14 @@ import { map } from 'rxjs/operators';
 export class DashHomeComponent implements OnInit {
 
   avisCitoyens: Observable<AvisCitoyen[]>;
+  listWilaya: Wilaya[];
+
   avis = new Array();
   /*ListAvis=Array<AvisCitoyen>;*/
   constructor(private dashSevice: DashService) { }
 
   ngOnInit() {
-    this.reloadDataCitzen();
+    this.reloadDataWilaya();
   }
   reloadDataCitzen() {
     this.dashSevice.getAvisCitoyen().subscribe(
@@ -37,7 +41,8 @@ export class DashHomeComponent implements OnInit {
       }
     );
   }
-
-  
-
+  reloadDataWilaya() {
+    this.dashSevice.getWilayaVotants().subscribe(listWilaya=>this.listWilaya=listWilaya);
+   console.log(this.listWilaya);
+  }
 }

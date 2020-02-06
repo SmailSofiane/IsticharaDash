@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   apiUrl: 'http://localhost:4000',
-  isticharaRestAuth:'http://localhost:8080'
+  isticharaRestAuth:'http://192.168.1.111:8080'
 };
 
 /*
