@@ -2,7 +2,7 @@ import { Serializer } from '@angular/compiler';
 import { Deserializable } from './deserializable';
 
 import {Commune} from './commune';
- 
+
 export class Wilaya implements Deserializable {
     deserialize(input: any): this {
             Object.assign(this, input);
@@ -10,55 +10,39 @@ export class Wilaya implements Deserializable {
    return this;
   }
 
-
   public codeW: string;
 
-  public getCodeW(): string {
-      return this.codeW;
-  }
-  public setCodeW(value: string) {
-      this.codeW = value;
-  }
-  private libW: string;
+  private _libelar: string;
 
-  public getLibW(): string {
-      return this.libW;
-  }
-  public setLibW(value: string) {
-      this.libW = value;
-  }
-  private libWFr: string;
+  private _libelfr: string;
 
-  public getLibWFr(): string {
-      return this.libWFr;
-  }
-  public setLibWFr(value: string) {
-      this.libWFr = value;
-  }
-  private nbVotansProgW: number;
-  public getNbVotansProgW(): number {
-      return this.nbVotansProgW;
-  }
-  public setNbVotansProgW(value: number) {
-      this.nbVotansProgW = value;
-  }
-  private nbVotansProgC: number;
 
-  public getNbVotansProgC(): number {
-      return this.nbVotansProgC;
-  }
-  public setNbVotansProgC(value: number) {
-      this.nbVotansProgC = value;
-  }
-  private commune: Commune[];
 
-  public getCommune(): Commune[] {
-      return this.commune;
-  }
-  public setCommune(value: Commune[]) {
-      this.commune = value;
+  private _comms: Commune[];
+
+  get comms(): Commune[] {
+    return this._comms;
   }
 
+  set comms(comms: Commune[]) {
+    this._comms = comms;
+  }
+
+  get libelar(): string {
+    return this._libelar;
+  }
+
+  set libelar(libelar: string) {
+    this._libelar = libelar;
+  }
+
+  get libelfr(): string {
+    return this._libelfr;
+  }
+
+  set libelfr(libelfr: string) {
+    this._libelfr = libelfr;
+  }
 
 
 }
