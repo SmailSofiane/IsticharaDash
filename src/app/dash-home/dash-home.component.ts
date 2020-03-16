@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AvisCitoyen } from '@app/_models/AvisCitoyen';
 import { DashService } from '@app/_services/_dashService/dash.service';
-import { map } from 'rxjs/operators';
+import { Titre }  from '@app/_models/titre';
 import { Wilaya } from '@app/_models/wilaya';
-import { log } from 'util';
+ 
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dash-home',
@@ -15,13 +16,15 @@ export class DashHomeComponent implements OnInit {
 
   avisCitoyens: Observable<AvisCitoyen[]>;
   listWilaya: Wilaya[];
+  listSecteur:Titre[];
 
   avis = new Array();
   /*ListAvis=Array<AvisCitoyen>;*/
-  constructor(private dashSevice: DashService) { }
+  constructor(private dashSevice: DashService,private router:Router) { }
 
   ngOnInit() {
     this.reloadDataWilaya();
+    //console.log(this.listWilaya.length);
   }
   reloadDataCitzen() {
     this.dashSevice.getAvisCitoyen().subscribe(
@@ -42,7 +45,15 @@ export class DashHomeComponent implements OnInit {
     );
   }
   reloadDataWilaya() {
-    this.dashSevice.getWilayaVotants().subscribe(listWilaya=>this.listWilaya=listWilaya);
-   console.log(this.listWilaya);
-  }
+     this.dashSevice.getWilayaVotants().subscribe(data=>this.listWilaya=data);
+   }
+   loadWilayaSecteur(codew:string) {
+    /// this.dashSevice.getwilayasecteur(wilaya).subscribe(data => this.listSecteur = data);
+            this.router.navigate(['secteurs',codew]);
+   }
+/*loadWilayaSecteur ()
+{
+  this.dashSevice.getwilayasecteur().subscribe(data=>this.listSecteur=data);
+}*/
+
 }

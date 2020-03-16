@@ -1,64 +1,74 @@
 import { Serializer } from '@angular/compiler';
 import { Deserializable } from './deserializable';
 
-import {Commune} from './commune';
+import { Commune } from './commune';
+
+export class Wilaya /*implements Deserializable*/ {
+   /* deserialize(input: any): this {
+        Object.assign(this, input);
+        this.commune = input.getCommune.map(commune => new Commune().deserialize(commune));
+        return this;
+    }*/
+
+
+    private _nbVotants: number;
+    public get nbVotants(): number {
+        return this._nbVotants;
+    }
+    public set nbVotants(value: number) {
+        this._nbVotants = value;
+    }
+   
+
+
+
+    private _codew: string;
+    public get codew(): string {
+        return this._codew;
+    }
+    public set codew(value: string) {
+        this._codew = value;
+    }
+
+     private _codec: string;
+    public get codec(): string {
+        return this._codec;
+    }
+    public set codec(value: string) {
+        this._codec = value;
+    }
  
-export class Wilaya implements Deserializable {
-    deserialize(input: any): this {
-            Object.assign(this, input);
-     this.commune=input.getCommune.map(commune=>new Commune().deserialize(commune));
-   return this;
-  }
 
+     
+    private _libelfr: string;
+    public get libelfr(): string {
+        return this._libelfr;
+    }
+    public set libelfr(value: string) {
+        this._libelfr = value;
+    }
+   
 
-  public codeW: string;
+     
+    private _libelar: string;
+    public get libelar(): string {
+        return this._libelar;
+    }
+    public set libelar(value: string) {
+        this._libelar = value;
+    }
 
-  public getCodeW(): string {
-      return this.codeW;
-  }
-  public setCodeW(value: string) {
-      this.codeW = value;
-  }
-  private libW: string;
+    
+     
+    private _commune: Commune[];
+    public get commune(): Commune[] {
+        return this._commune;
+    }
+    public set commune(value: Commune[]) {
+        this._commune = value;
+    }
 
-  public getLibW(): string {
-      return this.libW;
-  }
-  public setLibW(value: string) {
-      this.libW = value;
-  }
-  private libWFr: string;
-
-  public getLibWFr(): string {
-      return this.libWFr;
-  }
-  public setLibWFr(value: string) {
-      this.libWFr = value;
-  }
-  private nbVotansProgW: number;
-  public getNbVotansProgW(): number {
-      return this.nbVotansProgW;
-  }
-  public setNbVotansProgW(value: number) {
-      this.nbVotansProgW = value;
-  }
-  private nbVotansProgC: number;
-
-  public getNbVotansProgC(): number {
-      return this.nbVotansProgC;
-  }
-  public setNbVotansProgC(value: number) {
-      this.nbVotansProgC = value;
-  }
-  private commune: Commune[];
-
-  public getCommune(): Commune[] {
-      return this.commune;
-  }
-  public setCommune(value: Commune[]) {
-      this.commune = value;
-  }
-
+     
 
 
 }

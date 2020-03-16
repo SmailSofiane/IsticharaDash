@@ -1,0 +1,26 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h1> cityzen claims</h1>
+    </div>
+    <div class="panel-body">
+       <table class="table table-striped table-bordered">
+    <thead>
+        <tr>           
+            <th>عدد الإقتراحات</th>
+            <th>القطاع</th>
+            <th> رقم القطاع </th>
+        </tr>
+    </thead>
+    <tbody> 
+        <tr *ngFor="let secteur of listSecteur" (click)="loadProjectSecteur(secteur.num)" >
+            
+            
+            
+            <td>{{secteur.nbVotants}}</td>
+            <td>{{secteur.libRub}}</td>
+            <td>{{secteur.num}}</td>
+        </tr>
+    </tbody>
+       </table>     
+    </div>
+</div>

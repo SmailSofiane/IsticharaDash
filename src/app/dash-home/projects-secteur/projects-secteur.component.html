@@ -1,0 +1,26 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h1> cityzen claims</h1>
+    </div>
+    <div class="panel-body">
+       <table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>codeArticl  </th>
+            <th>codeprojet</th>
+            <th>القطاع الفرعي</th>
+            <th>عدد الإقتراحات</th>
+        </tr>
+    </thead>
+    <tbody> 
+        <tr *ngFor="let project of listProjets" >
+            <td><!--{{project.projectid.codeArticl}}--></td>
+            <td><!--{{project.projectid.codeprojet}}--></td>
+            <td>{{project.libprojet}}</td>
+            <td>{{project.nbVotants}}</td>
+        </tr>
+    </tbody>
+       </table>     
+    </div>
+</div>
+

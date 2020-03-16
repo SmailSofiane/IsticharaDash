@@ -1,26 +1,23 @@
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h1> cityzen claims</h1>
+        <h1> إقتراحات المواطن</h1>
     </div>
     <div class="panel-body">
-       <table class="table table-striped table-bordered">
+    <table class="table table-striped table-bordered">
     <thead>
         <tr>
-            <th>code wilaya</th>
-            <th>libel wilaya</th>
-            <th>libel arab</th>
-            <th>project</th>
-            <th>adress</th>
+         <th>عدد الإقتراحات</th>
+         <th>الولاية</th>
+         <th>رقم الولاية</th>
         </tr>
     </thead>
-    <tbody>
-        <tr *ngFor="let list of listWilaya">
-            <td>{{list.codew}}</td>
-            <td>{{list.libelFr}}</td>
-            <td>{{list.libelAr}}</td>
+    <tbody> 
+        <tr *ngFor="let wilaya of listWilaya" (click)="loadWilayaSecteur(wilaya.codew)">
+            <td>{{wilaya.nbVotants}}</td>
+            <td>{{wilaya.libelFr}}</td>
+            <td>{{wilaya.codew}}</td>
         </tr>
     </tbody>
-       </table>     
-
+    </table>     
     </div>
 </div>

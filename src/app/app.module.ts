@@ -9,13 +9,19 @@ import { HomeComponent } from './home/home.component';
  import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DashHomeComponent } from './dash-home/dash-home.component';
+import { WilayaSecteurComponent } from './dash-home/wilaya-secteur/wilaya-secteur.component';
+import { ProjectsSecteurComponent } from './dash-home/projects-secteur/projects-secteur.component';
+ 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    DashHomeComponent
+    DashHomeComponent,
+    WilayaSecteurComponent,
+    ProjectsSecteurComponent
+     
     
   ],
   imports: [

@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   apiUrl: 'http://localhost:4000',
   isticharaRestAuth:'http://192.168.1.111:8080'
-};
+}; 
 
 /*
  * For easier debugging in development mode, you can import the following file

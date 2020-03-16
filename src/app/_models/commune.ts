@@ -7,33 +7,39 @@ export class Commune implements Deserializable{
 
 
 
-    private codew: string;
-    public getCodew(): string {
-        return this.codew;
+    private _codew: string;
+    public get codew(): string {
+        return this._codew;
     }
-    public setCodew(value: string) {
-        this.codew = value;
+    public set codew(value: string) {
+        this._codew = value;
     }
-    private codec: string;
-    public getCodec(): string {
-        return this.codec;
+    
+    private _codec: string;
+    public get codec(): string {
+        return this._codec;
     }
-    public setCodec(value: string) {
-        this.codec = value;
+    public set codec(value: string) {
+        this._codec = value;
     }
-    private libelar: string;
-    public getLibelar(): string {
-        return this.libelar;
+    
+    private _libelleC: string;
+    public get libelleC(): string {
+        return this._libelleC;
     }
-    public setLibelar(value: string) {
-        this.libelar = value;
+    public set libelleC(value: string) {
+        this._libelleC = value;
     }
-    private libelfr: string;
-    public getLibelfr(): string {
-        return this.libelfr;
+    
+     
+    private _libelleC_AR: string;
+    public get libelleC_AR(): string {
+        return this._libelleC_AR;
     }
-    public setLibelfr(value: string) {
-        this.libelfr = value;
+    public set libelleC_AR(value: string) {
+        this._libelleC_AR = value;
     }
+     
+     
 
 }
